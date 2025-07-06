@@ -15,7 +15,11 @@ const app = express();
 // Serverin dinləyəcəyi portu müəyyənləşdiririk.
 // Əgər ətraf mühitdə PORT dəyişəni varsa (məsələn, hostinqdə), onu istifadə edir.
 // Yoxdursa, yerli inkişaf üçün 5000 portunu istifadə edir.
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; // Render öz PORT dəyişənini təmin edəcək
+// ...
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 // MongoDB bağlantı stringini .env faylından alırıq.
 const MONGODB_URI = process.env.MONGODB_URI;
